@@ -28,21 +28,26 @@ class Combat:
         coef = 1
         if type_attaque == "Eau":
             if type_defense == "Feu":
-                coef = 0.5
-            elif type_defense == "Terre":
                 coef = 2
+            elif type_defense == "Terre":
+                coef = 0.5
         elif type_attaque == "Feu":
             if type_defense == "Eau":
-                coef = 2
-            elif type_defense == "Terre":
                 coef = 0.5
+            elif type_defense == "Terre":
+                coef = 2
         elif type_attaque == "Terre":
             if type_defense == "Eau":
-                coef = 0.5
-            elif type_defense == "Feu":
                 coef = 2
+            elif type_defense == "Feu":
+                coef = 0.5
         elif type_attaque == "Normal":
-            coef = 0.75
+            if type_defense == "Eau"
+                coef = 0.75
+            elif type_defense == "Feu":
+                coef = 0.75
+            elif type_defense == "Terre":
+                coef = 0.75
         return int(attaquant.puissance_attaque * coef - defenseur.defense)
 
     def attaquer(self, attaquant, defenseur):
